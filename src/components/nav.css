@@ -1,0 +1,28 @@
+.nav {
+    padding: 24px;
+}
+
+.nav-list {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-list-item {
+    margin-right: 24px;
+    font-family: "Rubik Mono One";
+    font-size: 1.5rem;
+}
+
+.nav-list a {
+    color: #5c415d;
+    text-decoration: none;
+    border-bottom: 2px transparent;
+    transition: border 0.1s ease;
+}
+
+.nav-list a:hover,
+.nav-list a:focus {
+    border-bottom: 2px solid #5c415d;
+}

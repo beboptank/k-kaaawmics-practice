@@ -1,13 +1,9 @@
 import React from 'react';
 import Layout from '../components/Layout';
 
-require("typeface-rubik-mono-one");
-require("typeface-carrois-gothic-sc");
-require("typeface-montserrat");
-
-const Home = () => (
+const About = () => (
   <Layout>
-    <h1>K-kaaawmics</h1>
+    <h1>About</h1>
     <p>
       Parley port rigging long boat Blimey Jack Tar doubloon fire in the hole
       hang the jib Shiver me timbers. Davy Jones' Locker clipper fore spanker
@@ -23,4 +19,4 @@ const Home = () => (
   </Layout>
 )
 
-export default Home;
+export default About;
