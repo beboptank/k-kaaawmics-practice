@@ -10,31 +10,17 @@ require("typeface-montserrat");
 const Home = ({data}) => (
   <Layout>
     <h1>K-kaaawmics</h1>
-    <ul>
-      {data.allStrapiArticle.edges.map(document => (
-        <li key={document.node.id}>
-          <h2>
-            <Link to={`/${document.node.id}`}>{document.node.id}</Link>
-          </h2>
-          <p>{document.node.content}</p>
-        </li>
-      ))}
-    </ul>
+    <p>Welcome to k-kaaawmics. Original art and stories every week.</p>
+    
+    <section>
+      <h2>Latest Comics</h2>
+    </section>
+
+    <section>
+      <h2>K-kaaawmics Blog</h2>
+    </section>
   </Layout>
 )
 
 export default Home;
 
-export const pageQuery = graphql `
-  query IndexQuery {
-    allStrapiArticle {
-      edges {
-        node {
-          id
-          title
-          content
-        }
-      }
-    }
-  }
-`

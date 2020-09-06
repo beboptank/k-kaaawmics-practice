@@ -21,3 +21,17 @@ body {
 .main p {
     font-size: 2em;
 }
+
+.footer {
+    display: flex;
+    flex-flow: column;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-items: center;
+}
+
+.fontawesomefooter {
+    font-size: 2em;
+    margin: 5px;
+    color: #5c415d;
+}
