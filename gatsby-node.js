@@ -7,6 +7,20 @@
 // You can delete this file if you're not using it
 
 const path = require("path");
+const { graphql } = require("gatsby");
+
+const makeRequest = (graphql, request) => new Promise((resolve, reject) => {
+  // Query for nodes to use in creating pages
+  resolve(
+    graphql(request).then(result => {
+      if (result.errors) {
+        reject(result.errors)
+      }
+
+      return result;
+    })
+  );
+});
 
 exports.createPages = ({
     boundActionCreators,
