@@ -23,11 +23,16 @@ body {
 }
 
 .footer {
+    background-color: #b4ebca;
     display: flex;
     flex-flow: column;
     flex-wrap: wrap;
     align-items: center;
     justify-items: center;
+}
+
+.footertext {
+    font-family: "Rubik Mono One";
 }
 
 .fontawesomefooter {
