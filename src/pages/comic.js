@@ -6,7 +6,7 @@ import Img from 'gatsby-image';
 
 const Comic = ({data}) => (
   <Layout>
-    <h1>K-kaaawmics</h1>
+    <h1>Latest Comics</h1>
     <ul>
       {data.allStrapiArticle.edges.map(document => (
         <li key={document.node.id}>
@@ -16,7 +16,7 @@ const Comic = ({data}) => (
           <Img fixed={document.node.image.childImageSharp.fixed}/>
           <p>{document.node.content}</p>
         </li>
-      ))}
+      )).reverse()}
     </ul>
   </Layout>
 )

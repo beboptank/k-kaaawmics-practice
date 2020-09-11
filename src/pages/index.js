@@ -1,7 +1,5 @@
 import React from 'react';
 import Layout from '../components/Layout';
-import { Link } from 'gatsby';
-import { graphql } from 'gatsby';
 
 require("typeface-rubik-mono-one");
 require("typeface-carrois-gothic-sc");
@@ -14,10 +12,15 @@ const Home = ({data}) => (
     
     <section>
       <h2>Latest Comics</h2>
+      <p>Read our latest exciting comics.</p>
     </section>
 
     <section>
       <h2>K-kaaawmics Blog</h2>
+      <p>
+        Find out what's going on in the life of our artists and read about the next thing to come
+        from K-kaaawmics.
+      </p>
     </section>
   </Layout>
 )

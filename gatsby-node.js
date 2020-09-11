@@ -22,40 +22,35 @@ const makeRequest = (graphql, request) => new Promise((resolve, reject) => {
   );
 });
 
-exports.createPages = ({
-    boundActionCreators,
-    graphql
-}) => {
-    const {
-        createPage
-    } = boundActionCreators;
-    const postTemplate = path.resolve("src/templates/blogTemplate.js");
+exports.createPages = ({ actions, graphql }) => {
+  const { createPage } = actions;
 
-    return graphql(`
+  const getComics = makeRequest(graphql, `
     {
-      allMarkdownRemark {
+      allStrapiArticle {
         edges {
           node {
-            frontmatter {
-              path
-            }
+            id
           }
         }
+      }
     }
-  }
-  `).then(res => {
-        if (res.errors) {
-            return Promise.reject(res.errors)
+  `).then(result => {
+    //Create pages for each article
+    result.data.allStrapiArticle.edges.forEach(({ node }) => {
+      createPage({
+        path: `/${node.id}`,
+        component: path.resolve(`src/templates/comic.js`),
+        context: {
+          id: node.id,
         }
-        res.data.allMarkdownRemark.edges.forEach(({
-            node
-        }) => {
-            createPage({
-                path: node.frontmatter.path,
-                component: postTemplate,
-            })
-        })
-    })
+      });
+    });
+  });
+
+  return getComics;
+
 };
+
 
 

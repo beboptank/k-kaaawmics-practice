@@ -7,7 +7,7 @@ body {
 
 .main {
     padding: 24px;
-    font-family: "Carrois Gothic SC";
+    font-family: "Carrois Gothic", sans-serif;
     background-color: #f6f7eb;
     height: 100%;
     color: #21475b;
@@ -18,8 +18,13 @@ body {
     font-family: "Rubik Mono One";
 }
 
+.main h2 {
+    font-size: 3em;
+    font-family: "Rubik Mono One", sans-serif;
+}
+
 .main p {
-    font-size: 2em;
+    font-size: 1.5em;
 }
 
 .footer {
