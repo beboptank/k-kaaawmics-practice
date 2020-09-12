@@ -48,7 +48,32 @@ exports.createPages = ({ actions, graphql }) => {
     });
   });
 
-  return getComics;
+  const getAuthors = makeRequest(graphql, `
+    {
+      allStrapiUser {
+        edges {
+          node {
+            id
+          }
+        }
+      }
+    }
+  `).then(result => {
+    result.data.allStrapiUser.edges.forEach(({ node }) => {
+      createPage({
+        path: `/authors/${node.id}`,
+        component: path.resolve(`src/templates/author.js`),
+        context: {
+          id: node.id,
+        }
+      });
+    });
+  });
+
+  return Promise.all([
+    getComics,
+    getAuthors,
+  ]);
 
 };
 
